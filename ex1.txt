@@ -1,0 +1,11 @@
+def compare_prices(products, productPrices, productSold, soldPrice):
+    price_map = {}
+    counter = 0
+    for i in range(len(products)):
+        price_map[products[i]] = float(productPrices[i])
+
+    for i in range(len(productSold)):
+        if productSold[i] in price_map:
+            if price_map[productSold[i]] != soldPrice[i]:
+                counter += 1
+    return counter
